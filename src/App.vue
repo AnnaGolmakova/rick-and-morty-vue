@@ -1,6 +1,7 @@
 <script setup>
 import CharacterCard from './components/CharacterCard.vue'
 import CardList from './components/CardList.vue'
+import Pagination from './components/Pagination.vue'
 import characters from './data/character.js'
 </script>
 
@@ -16,6 +17,8 @@ import characters from './data/character.js'
       </template>
     </CardList>
   </main>
+
+  <Pagination v-bind:current-page="2" v-bind:total-pages="10" />
 </template>
 
 <style scoped>
