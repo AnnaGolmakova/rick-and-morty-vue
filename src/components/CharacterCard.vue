@@ -121,14 +121,17 @@ defineProps(['character'])
   border-radius: 8px;
 }
 
-.card__status_alive::before {
+.card__status::before {
   content: ' ';
   display: inline-block;
-  background-color: greenyellow;
   height: 8px;
   width: 8px;
   border-radius: 50%;
   margin-right: 4px;
+}
+
+.card__status_alive::before {
+  background-color: greenyellow;
 }
 
 .card__status_dead::before {
@@ -136,6 +139,6 @@ defineProps(['character'])
 }
 
 .card__status_unknown::before {
-  background-color: lightgrey;
+  background-color: grey;
 }
 </style>
