@@ -43,7 +43,14 @@ defineProps({
   align-items: center;
   text-align: center;
   border-radius: 4px;
+  cursor: pointer;
 }
+
+.pagination__item:hover {
+  opacity: 0.8;
+  background-color: lightgray;
+}
+
 .pagination__item_active {
   background-color: lightgray;
 }
