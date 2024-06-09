@@ -19,13 +19,24 @@ onMounted(async () => {
 })
 
 async function loadData() {
-  const response = await getCharacters({
-    page: currentPage.value,
-    name: filterOptions.value.name,
-    status: filterOptions.value.status
-  })
-  characters.value = response.results
-  totalPages.value = response.info.pages
+  try {
+    const response = await getCharacters({
+      page: currentPage.value,
+      name: filterOptions.value.name,
+      status: filterOptions.value.status
+    })
+    characters.value = response.results
+    totalPages.value = response.info.pages
+  } catch (error) {
+    console.log(error, error.code, error.body)
+    if (error.code === 404) {
+      characters.value = []
+    } else {
+      alert(
+        'Unable to find any characters. You might have a problem with your internet connection. Please, try again later'
+      )
+    }
+  }
 }
 
 function navigateToPage(page) {
