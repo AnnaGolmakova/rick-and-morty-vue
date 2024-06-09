@@ -2,15 +2,17 @@
 import CharacterCard from './components/CharacterCard.vue'
 import CardList from './components/CardList.vue'
 import Pagination from './components/Pagination.vue'
+import SearchForm from './components/SearchForm.vue'
 import characters from './data/character.js'
 </script>
 
 <template>
   <header>
-    <h1>Rick and Morty's Characters</h1>
+    <h1 class="header">Rick and Morty's Characters</h1>
   </header>
 
   <main>
+    <SearchForm />
     <CardList :items="characters">
       <template #default="{ item }">
         <CharacterCard :character="item" />
@@ -22,25 +24,15 @@ import characters from './data/character.js'
 </template>
 
 <style scoped>
-header {
+.header {
   line-height: 1.5;
 }
 
 @media (min-width: 1024px) {
-  header {
+  .header {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 </style>
