@@ -58,6 +58,7 @@ const pages = computed(() => {
   align-items: center;
   gap: 8px;
   padding: 0;
+  margin: 40px 0 0 0;
 }
 .pagination__item {
   width: 40px;

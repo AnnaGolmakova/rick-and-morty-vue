@@ -31,6 +31,7 @@ async function loadData() {
     console.log(error, error.code, error.body)
     if (error.code === 404) {
       characters.value = []
+      totalPages.value = 0
     } else {
       alert(
         'Unable to find any characters. You might have a problem with your internet connection. Please, try again later'
@@ -75,14 +76,17 @@ function applyFilter(filter) {
 
 <style scoped>
 .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   line-height: 1.5;
 }
-
+/* 
 @media (min-width: 1024px) {
   .header {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-}
+} */
 </style>
