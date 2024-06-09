@@ -63,8 +63,8 @@ const name = ref('')
   justify-content: stretch;
   align-items: center;
   gap: 8px;
-  background-color: #2f2f2f;
-  border: 1px #2f2f2f solid;
+  background-color: var(--color-background-soft);
+  border: 1px var(--color-background-soft) solid;
   border-radius: 40px;
   height: 46px;
   overflow: hidden;
@@ -72,7 +72,7 @@ const name = ref('')
 }
 
 .search-form__container:has(.search-form__input:focus) {
-  border: 1px rgba(255, 255, 255, 0.2) solid;
+  border: 1px var(--color-border) solid;
 }
 
 .search-form__input {
@@ -80,7 +80,7 @@ const name = ref('')
   flex: 1;
   border: none;
   background: transparent;
-  color: #fff;
+  color: var(--color-heading);
   font-size: 14px;
   font-weight: 400;
   font-family: inherit;
@@ -95,7 +95,7 @@ const name = ref('')
   position: relative;
   appearance: none;
   -webkit-appearance: none;
-  color: white;
+  color: var(--color-heading);
   padding: 0 32px 0 8px;
   height: 100%;
   background-color: transparent;
@@ -114,23 +114,23 @@ const name = ref('')
 }
 
 .search-form__status:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(128, 128, 128, 0.1);
   cursor: pointer;
 }
 
 .search-form__button {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-background);
   border-radius: 16px;
   height: 32px;
   padding: 0 24px;
   border: none;
   cursor: pointer;
-  color: white;
+  color: var(--color-heading);
   font-size: 14px;
   font-family: inherit;
 }
 
 .search-form__button:hover {
-  opacity: 0.8;
+  background-color: var(--color-background-mute);
 }
 </style>

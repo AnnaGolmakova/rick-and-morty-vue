@@ -58,12 +58,14 @@ const pages = computed(() => {
   align-items: center;
   gap: 8px;
   padding: 0;
-  margin: 40px 0 0 0;
+  margin: 40px 0 0;
 }
 .pagination__item {
   width: 40px;
   height: 40px;
-  border: 1px solid lightgray;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  color: var(--color-heading);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,11 +76,11 @@ const pages = computed(() => {
 
 .pagination__item:hover {
   opacity: 0.8;
-  background-color: lightgray;
+  background-color: var(--color-background-mute);
 }
 
 .pagination__item_active {
-  background-color: lightgray;
+  background-color: var(--color-background-soft);
 }
 
 .pagination-button {
@@ -86,6 +88,7 @@ const pages = computed(() => {
   height: 100%;
   border: none;
   background: transparent;
+  color: inherit;
   font-family: inherit;
 }
 </style>

@@ -29,13 +29,13 @@ defineProps(['character'])
   position: relative;
   display: grid;
   grid-template-rows: auto min-content;
-  background-color: #222;
+  background-color: var(--color-background-mute);
   border-radius: 6px;
-  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
-  aspect-ratio: 236 / 290;
+  box-shadow: 0px 12px 16px -8px rgba(0, 0, 0, 0.2);
+  aspect-ratio: 240 / 290;
   margin: 0;
   overflow: hidden;
-  color: white;
+  color: var(--color-heading);
 }
 
 @media only screen and (max-width: 767px) {
@@ -48,10 +48,6 @@ defineProps(['character'])
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
-
-.card__image-wrapper:hover {
-  opacity: 0.7;
 }
 
 .card__image {
@@ -107,7 +103,7 @@ defineProps(['character'])
 }
 
 .label {
-  color: #8b8b8b;
+  color: var(--color-text);
   font-weight: 400;
   line-height: 13px;
 }
@@ -117,6 +113,7 @@ defineProps(['character'])
   top: 8px;
   right: 8px;
   background-color: rgba(0, 0, 0, 0.1);
+  color: white;
   padding: 0 8px 2px 8px;
   border-radius: 8px;
 }

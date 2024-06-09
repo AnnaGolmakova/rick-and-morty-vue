@@ -79,14 +79,7 @@ function applyFilter(filter) {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  font-weight: 500;
   line-height: 1.5;
 }
-/* 
-@media (min-width: 1024px) {
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-} */
 </style>
