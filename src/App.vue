@@ -6,23 +6,36 @@ import SearchForm from './components/SearchForm.vue'
 import getCharacters from './utils/rickAndMortyAPI.js'
 import { ref, onMounted } from 'vue'
 
-// let characters = await getCharacters()
 const characters = ref([])
 const totalPages = ref(0)
 const currentPage = ref(1)
+const filterOptions = ref({
+  name: '',
+  status: ''
+})
 
 onMounted(async () => {
   loadData()
 })
 
 async function loadData() {
-  const response = await getCharacters({ page: currentPage.value })
+  const response = await getCharacters({
+    page: currentPage.value,
+    name: filterOptions.value.name,
+    status: filterOptions.value.status
+  })
   characters.value = response.results
   totalPages.value = response.info.pages
 }
 
 function navigateToPage(page) {
   currentPage.value = page
+  loadData()
+}
+
+function applyFilter(filter) {
+  filterOptions.value = filter
+  currentPage.value = 1
   loadData()
 }
 </script>
@@ -33,7 +46,7 @@ function navigateToPage(page) {
   </header>
 
   <main>
-    <SearchForm />
+    <SearchForm @filter-submit="(filter) => applyFilter(filter)" />
     <CardList v-if="characters" :items="characters">
       <template #default="{ item }">
         <CharacterCard :character="item" />

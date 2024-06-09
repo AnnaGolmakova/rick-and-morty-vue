@@ -1,5 +1,8 @@
 <script setup>
-let error
+import { ref } from 'vue'
+
+const statusSelected = ref('')
+const name = ref('')
 </script>
 
 <template>
@@ -12,17 +15,22 @@ let error
           type="search"
           placeholder="Character"
           class="search-form__input"
-          required
+          v-model="name"
         />
-        <select name="status" id="status" class="search-form__status">
-          <option value="any">Any status</option>
+        <select name="status" id="status" class="search-form__status" v-model="statusSelected">
+          <option value="">Any status</option>
           <option value="alive">Alive</option>
           <option value="dead">Dead</option>
           <option value="unknown">Unknown</option>
         </select>
-        <button type="submit" class="search-form__button">Search</button>
+        <button
+          type="submit"
+          @click.prevent="$emit('filterSubmit', { name: name, status: statusSelected })"
+          class="search-form__button"
+        >
+          Search
+        </button>
       </div>
-      <span class="search-error">{{ error ? 'Please insert a keyword' : '' }}</span>
     </div>
   </form>
 </template>
@@ -45,14 +53,6 @@ let error
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-.search-error {
-  color: #ee3465;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 12px;
-  height: 12px;
 }
 
 .search-form__container {
