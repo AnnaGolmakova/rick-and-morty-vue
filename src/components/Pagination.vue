@@ -19,7 +19,9 @@ defineProps({
         :key="index"
         :class="['pagination__item', index == currentPage ? 'pagination__item_active' : '']"
       >
-        {{ index }}
+        <button type="button" @click="$emit('changePage', index)" class="pagination-button">
+          {{ index }}
+        </button>
       </li>
     </ul>
   </nav>
@@ -53,5 +55,13 @@ defineProps({
 
 .pagination__item_active {
   background-color: lightgray;
+}
+
+.pagination-button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-family: inherit;
 }
 </style>

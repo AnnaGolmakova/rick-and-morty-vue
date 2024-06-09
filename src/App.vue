@@ -12,10 +12,19 @@ const totalPages = ref(0)
 const currentPage = ref(1)
 
 onMounted(async () => {
-  const response = await getCharacters()
+  loadData()
+})
+
+async function loadData() {
+  const response = await getCharacters({ page: currentPage.value })
   characters.value = response.results
   totalPages.value = response.info.pages
-})
+}
+
+function navigateToPage(page) {
+  currentPage.value = page
+  loadData()
+}
 </script>
 
 <template>
@@ -36,6 +45,7 @@ onMounted(async () => {
     v-if="totalPages !== 0"
     v-bind:current-page="currentPage"
     v-bind:total-pages="totalPages"
+    @change-page="(page) => navigateToPage(page)"
   />
 </template>
 
