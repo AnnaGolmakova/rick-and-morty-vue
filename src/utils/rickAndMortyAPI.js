@@ -11,7 +11,7 @@ function getResource(endpoint, options) {
 }
 
 function getCharacters(options) {
-  getResource('character', options)
+  return getResource('character', options)
 }
 
 export default getCharacters
