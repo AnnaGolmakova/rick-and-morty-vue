@@ -1,35 +1,28 @@
-# rick-and-morty-vue
+<h1 align="center">Rick and Morty's Characters on Vue</h1>
 
-This template should help get you started developing with Vue 3 in Vite.
+## Description
 
-## Recommended IDE Setup
+This is a web-page with Rick and Morty's characters. You can filter your search results by choosing a life status (alive, dead, unknown or any status) and you can perform a search by a keyword. The data is received from Rick and Morty API https://rickandmortyapi.com
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+<img src="./readme_assets/title.png">
 
-## Customize configuration
+The page supports light and dark themes
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+<img src="./readme_assets/light.png">
 
-## Project Setup
+<img src="./readme_assets/dark.png">
 
-```sh
-pnpm install
+## Technologies in the project
+
+- Vue3
+- CSS
+- HTML5
+- Responsive Layout
+- Javascript
+
+## Project setup
+
 ```
-
-### Compile and Hot-Reload for Development
-
-```sh
-pnpm dev
-```
-
-### Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
+npm install
+npm run serve
 ```
