@@ -32,7 +32,7 @@ defineProps(['character'])
   background-color: #222;
   border-radius: 6px;
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
-  aspect-ratio: 364 / 280;
+  aspect-ratio: 236 / 290;
   margin: 0;
   overflow: hidden;
   color: white;
@@ -40,7 +40,7 @@ defineProps(['character'])
 
 @media only screen and (max-width: 767px) {
   .card {
-    aspect-ratio: 300 / 237;
+    aspect-ratio: 288 / 272;
   }
 }
 
@@ -100,7 +100,7 @@ defineProps(['character'])
 
 .card__description {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 3fr;
   grid-template-rows: auto;
   align-items: center;
   gap: 2px 16px;
